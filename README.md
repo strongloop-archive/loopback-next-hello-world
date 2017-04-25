@@ -1,2 +1,3 @@
 # loopback-next-quick-start
-Quick start tutorial for LoopBack.next
+
+Quick start tutorial for LoopBack.next.
