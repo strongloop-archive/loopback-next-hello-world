@@ -5,7 +5,7 @@ Quick start tutorial for LoopBack.next.
 ## Installation
 
 ```
-https://github.com/strongloop/loopback-next-quick-start.git
+git clone https://github.com/strongloop/loopback-next-quick-start.git
 ```
 
 ## Basic use
