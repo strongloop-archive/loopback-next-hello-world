@@ -2,6 +2,8 @@
 
 # loopback-next-quick-start
 
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/strongloop/loopback)
+
 Quick start tutorial for LoopBack.next.
 
 ## Installation
