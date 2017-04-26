@@ -49,11 +49,3 @@ import {Authentication} from '@loopback/authentication';
 const app = new Application();
 app.component(Authentication);
 ```
-
-How do I write/add my own component?
-
-```
-All the things you need to know.
-```
-
-If you want to know more, see how to write ex dev wiki.
