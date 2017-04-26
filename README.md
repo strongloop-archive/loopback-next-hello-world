@@ -1,4 +1,4 @@
-[![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)
+[![Build Status](https://travis-ci.org/strongloop/loopback-next-quick-start.svg?branch=master)](https://travis-ci.org/strongloop/loopback-next-quick-start)
 
 # loopback-next-quick-start
 
