@@ -1,3 +1,5 @@
+[![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)
+
 # loopback-next-quick-start
 
 Quick start tutorial for LoopBack.next.
