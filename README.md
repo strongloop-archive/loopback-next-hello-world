@@ -36,16 +36,15 @@ npm start
 ### The application entry point
 
 ```
-import {Application} from '@loopback/loopback'
-
+const Application = require('@loopback/loopback').Application;
 const app = new Application();
 ```
 
+### How to add a component
 
 ```
-import {Application} from '@loopback/loopback';
-import {Authentication} from '@loopback/authentication';
-
+const Application = require('@loopback/loopback).Application;
+const Authentication = require('@loopback/authentication');
 const app = new Application();
 app.component(Authentication);
 ```
