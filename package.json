@@ -1,0 +1,21 @@
+{
+  "name": "loopback-next-quick-start.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "loopback-next",
+    "tutorial",
+    "quickstart",
+    "quick-start"
+  ],
+  "author": "IBM",
+  "license": "MIT",
+  "devDependencies": {
+    "@loopback/testlab": "^4.0.0-alpha.1",
+    "mocha": "^3.3.0"
+  }
+}
