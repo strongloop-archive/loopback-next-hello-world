@@ -15,7 +15,7 @@
   "author": "IBM",
   "license": "MIT",
   "devDependencies": {
-    "@loopback/testlab": "^4.0.0-alpha.1",
+    "@loopback/testlab": "^4.0.0-alpha.2",
     "mocha": "^3.3.0"
   },
   "dependencies": {
