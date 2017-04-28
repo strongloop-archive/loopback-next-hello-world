@@ -17,5 +17,8 @@
   "devDependencies": {
     "@loopback/testlab": "^4.0.0-alpha.1",
     "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "@loopback/loopback": "^4.0.0-alpha.1"
   }
 }
