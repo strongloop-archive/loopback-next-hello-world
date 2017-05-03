@@ -1,2 +1,2 @@
-const Application = require('@loopback/loopback').Application;
+const Application = require('@loopback/core').Application;
 const app = new Application();
