@@ -2,12 +2,16 @@
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/strongloop/loopback) [![Build Status](https://travis-ci.org/strongloop/loopback-next-quick-start.svg?branch=master)](https://travis-ci.org/strongloop/loopback-next-quick-start) [TODO Code coverage - coveralls]
 
-Quick start tutorial for LoopBack.next.
+Quick start tutorial for LoopBack.next + TypeScript.
 
 ## Installation
 
+Prerequisite
+
+- See https://github.com/strongloop/loopback-next/wiki/Installation
+
 ```
-git clone https://github.com/strongloop/loopback-next-quick-start.git
+git clone https://github.com/strongloop/loopback-next-ts-starter.git
 ```
 
 ## Basic use
@@ -17,6 +21,8 @@ npm start
 ```
 
 ## Project layout
+
+WIP
 
 ```
 .
@@ -31,20 +37,4 @@ npm start
     ├── index.ts          # The component entry point
     └── test              # Container for component tests
          └── todo.test.ts # An example component test
-```
-
-### The application entry point
-
-```
-const Application = require('@loopback/loopback').Application;
-const app = new Application();
-```
-
-### How to add a component
-
-```
-const Application = require('@loopback/loopback).Application;
-const Authentication = require('@loopback/authentication');
-const app = new Application();
-app.component(Authentication);
 ```
