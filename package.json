@@ -1,16 +1,15 @@
 {
-  "name": "loopback-next-quick-start.js",
+  "name": "loopback-next-ts-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starting point for LoopBack.next apps using TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
     "loopback-next",
-    "tutorial",
-    "quickstart",
-    "quick-start"
+    "typescript",
+    "starter"
   ],
   "author": "IBM",
   "license": "MIT",
