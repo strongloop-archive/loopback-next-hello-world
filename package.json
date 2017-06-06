@@ -2,9 +2,10 @@
   "name": "loopback-next-ts-starter",
   "version": "1.0.0",
   "description": "A starting point for LoopBack.next apps using TypeScript",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node ."
   },
   "keywords": [
     "loopback-next",
