@@ -4,6 +4,8 @@
   "description": "A starting point for LoopBack.next apps using TypeScript",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
     "test": "mocha",
     "start": "node ."
   },

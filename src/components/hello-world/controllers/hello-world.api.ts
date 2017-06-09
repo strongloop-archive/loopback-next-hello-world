@@ -1,7 +1,7 @@
 export const def = {
     basePath: '/',
     paths: {
-        '/hello-world': {
+        '/helloworld': {
             get: {
                 'x-operation-name': 'helloWorld',
                 parameters: [
