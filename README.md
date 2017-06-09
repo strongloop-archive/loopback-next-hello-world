@@ -3,38 +3,46 @@
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/strongloop/loopback) [![Build Status](https://travis-ci.org/strongloop/loopback-next-quick-start.svg?branch=master)](https://travis-ci.org/strongloop/loopback-next-quick-start) [TODO Code coverage - coveralls]
 
 Welcome to the quick start tutorial for LoopBack.next + TypeScript!
+LoopBack makes it easy to build modern applications that require complex integrations. LoopBack.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
 
-This tutorial is a quick Hello World example to familiarize you with creating a LoopBack.next application using TypeScript.
+Goal of tutorial
+Show you what a LoopBack.next app looks like and how the basics works
+
+what we're trying to do
+start a server to serve content
+make a request to the server to fetch content
+
+how we do it
+create a server
+add a custom component
+add a custom sequence
+
+What we'll do to the app:
+- Make a request to the server with a name and get back a HTTP 200 response
 
 ## Setup
 
+[CLEANUP]
+Before you clone ... 
 ### Install `node`, `npm`, and `TypeScript` 
 You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. For the latest information on project dependencies for LoopBack, please check this link: 
-
-- https://github.com/strongloop/loopback-next/wiki/Installation
-
-We recommend you use [VSCode](https://code.visualstudio.com/) for this quick start because it has built-in TypeScript support, but you can use any editor. For more information about using TypeScript with your editor of choice, check out https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support.
-
-[TODO add a Need more help? link]
-
-### Clone this project
+https://github.com/strongloop/loopback-next/wiki/Installation
 
 ```
 git clone https://github.com/strongloop/loopback-next-ts-starter.git
-```
-
-## Run your application
-
-```
 npm start
+curl localhost:3000/helloworld?name=Joe
+# you should see "Hello world Joe!"
 ```
 
-## Test your application
-[TODO]
+> Note: `npm start` automatically builds the project via the `prestart` NPM script in package.json
 
-```
-npm test
-```
+## Useful app commands
+
+- Clone this project: `git clone https://github.com/strongloop/loopback-next-ts-starter.git`
+- Building this project: `npm run build`
+- Running the application: `npm start`
+- Test your application: `npm test`
 
 ## Project structure
 
@@ -56,12 +64,6 @@ A TypeScript project will have separate `src` and `dist` directories, for source
 |src/index.ts|------------|
 |test/|this directory contains your tests|
 |tsconfig.json|the configuration settings for TypeScript compilation|
-
-## Building this project
-
-```
-npm run build
-```
 
 ### TypeScript Configuration
 
@@ -91,8 +93,11 @@ Here is the `tsconfig.json` for this project:
 | `"baseUrl": "./src"`                   |  |
 | `experimentalDecorators`                     | enables support for decorators (more information: https://www.typescriptlang.org/docs/handbook/decorators.html)|
 
+## If you want to try coding up this example yourself [CLEANUP]
 
+We recommend you use [VSCode](https://code.visualstudio.com/) for this quick start because it has built-in TypeScript support, but you can use any editor. For more information about using TypeScript with your editor of choice, check out https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support.
 
+[TODO add a Need more help? link]
 
 ## Dependencies
 
