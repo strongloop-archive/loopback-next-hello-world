@@ -57,9 +57,11 @@ A TypeScript project will have separate `src` and `dist` directories, for source
 |test/|this directory contains your tests|
 |tsconfig.json|the configuration settings for TypeScript compilation|
 
-##Building this project
+## Building this project
 
-[TODO: tsc? npm scripts?]
+```
+npm run build
+```
 
 ### TypeScript Configuration
 
