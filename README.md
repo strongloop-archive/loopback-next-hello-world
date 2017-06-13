@@ -30,6 +30,7 @@ https://github.com/strongloop/loopback-next/wiki/Installation
 
 ```
 git clone https://github.com/strongloop/loopback-next-ts-starter.git
+npm install -S @loopback/core
 npm start
 curl localhost:3000/helloworld?name=Joe
 # you should see "Hello world Joe!"
