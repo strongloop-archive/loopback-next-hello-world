@@ -1,5 +1,5 @@
 {
-  "name": "loopback-next-ts-starter",
+  "name": "loopback-next-hello-world",
   "version": "1.0.0",
   "description": "A starting point for LoopBack.next apps using TypeScript",
   "main": "dist/index.js",
@@ -13,7 +13,8 @@
   "keywords": [
     "loopback-next",
     "typescript",
-    "starter"
+    "starter",
+    "hello-world"
   ],
   "author": "IBM",
   "license": "MIT",
