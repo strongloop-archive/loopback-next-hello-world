@@ -29,9 +29,12 @@ You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0)
 https://github.com/strongloop/loopback-next/wiki/Installation
 
 ```
-git clone https://github.com/strongloop/loopback-next-ts-starter.git
+git clone https://github.com/strongloop/loopback-next-hello-world.git
+cd loopback-next-hello-world
 npm install -S @loopback/core
+npm install
 npm start
+# On another terminal, run the following curl command
 curl localhost:3000/helloworld?name=Joe
 # you should see "Hello world Joe!"
 ```
@@ -40,7 +43,7 @@ curl localhost:3000/helloworld?name=Joe
 
 ## Useful app commands
 
-- Clone this project: `git clone https://github.com/strongloop/loopback-next-ts-starter.git`
+- Clone this project: `git clone https://github.com/strongloop/loopback-next-hello-world.git`
 - Building this project: `npm run build`
 - Running the application: `npm start`
 - Test your application: `npm test`
