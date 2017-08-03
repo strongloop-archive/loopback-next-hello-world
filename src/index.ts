@@ -1,7 +1,7 @@
 import {Application, DefaultSequence, FindRoute, InvokeMethod,
   ParsedRequest, Reject, Send, inject} from '@loopback/core';
 import {Logger, LoggerComponent} from '@loopback/logger';
-import {HelloWorldController} from './components/hello-world/controllers/hello-world';
+import {HelloWorldController} from './controllers/hello-world';
 import * as http from 'http';
 
 const setupLoggerKey = Logger.SequenceActions.SETUP_LOGGER;

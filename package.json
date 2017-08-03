@@ -20,13 +20,12 @@
   "license": "MIT",
   "devDependencies": {
     "@loopback/testlab": "^4.0.0-alpha.4",
-    "@types/node": "^7.0.28",
     "mocha": "^3.3.0",
     "typescript": "^2.3.4"
   },
   "dependencies": {
     "@loopback/context": "^4.0.0-alpha.10",
-    "@loopback/core": "^4.0.0-alpha.9",
-    "@loopback/logger": "^1.0.0"
+    "@loopback/core": "^4.0.0-alpha.10",
+    "@loopback/logger": "^0.1.0"
   }
 }
