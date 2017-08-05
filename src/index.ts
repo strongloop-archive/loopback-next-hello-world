@@ -1,8 +1,8 @@
-import {createApp} from './application';
-import {HelloWorldController} from './components/hello-world/controllers/hello-world';
+import {Application} from '@loopback/core';
+import {HelloWorldController} from './controllers/hello-world';
 import * as http from 'http';
 
-const app = createApp();
+const app = new Application();
 app.controller(HelloWorldController);
 
 const port = 3000;
