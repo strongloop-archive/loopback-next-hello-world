@@ -28,7 +28,6 @@ export class MySequence implements SequenceHandler {
     try {
       const route = this.findRoute(req);
 
-      // This is the important line added to the default sequence implementation
       const user = await this.authenticateRequest(req);
 
       const args = await parseOperationArgs(req, route);

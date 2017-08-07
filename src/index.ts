@@ -1,17 +1,7 @@
-import {Application} from '@loopback/core';
-import {AuthenticationComponent, BindingKeys} from '@loopback/authentication';
-import {MyAuthStrategyProvider} from './providers/auth-strategy';
-import {HelloWorldController} from './controllers/hello-world';
-import {MySequence} from './sequence';
+import {createApp} from './application';
 import * as http from 'http';
 
-const app = new Application({
-  components: [AuthenticationComponent],
- });
-app.bind(BindingKeys.Authentication.STRATEGY)
-  .toProvider(MyAuthStrategyProvider);
-app.sequence(MySequence);
-app.controller(HelloWorldController);
+const app = createApp();
 
 const port = 3000;
 const server = http.createServer(app.handleHttp);
