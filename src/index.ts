@@ -1,9 +1,7 @@
-import {Application} from '@loopback/core';
-import {HelloWorldController} from './controllers/hello-world';
+import {createApp} from './application';
 import * as http from 'http';
 
-const app = new Application();
-app.controller(HelloWorldController);
+const app = createApp();
 
 const port = 3000;
 const server = http.createServer(app.handleHttp);
