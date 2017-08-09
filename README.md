@@ -5,7 +5,6 @@
 ## Table of Contents
 * [Overview](#overview)
 * [Setup](#setup)
-* [Useful App Commands](#usefulCommands)
 * [Testing](#testing)
 * [Project Structure](#structure)
 * [TypeScript Configuration](#typescriptConfiguration)
@@ -16,7 +15,9 @@
 ## <a name="overview"></a>Overview
 
 #### Welcome to the quick start tutorial for Loopback.next + TypeScript!
-Loopback makes it easy to build modern applications that require complex integrations. Loopback.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
+Loopback makes it easy to build modern applications that require complex integrations. 
+
+Loopback.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
 
 The goal of this tutorial is to show you what a basic, 'hello-world' Loopback.next app looks like and how it works.
 
@@ -39,30 +40,36 @@ When you have this example installed and running, you will be able to make a req
 
 1. Install `node`, `npm`, and `TypeScript` 
 
-	You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. For the latest information on project dependencies for LoopBack, please check this link: 
-https://github.com/strongloop/loopback-next/wiki/Installation
+	You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. 
+	
+	For the latest information on project dependencies for LoopBack, please check this link: 
+[https://github.com/strongloop/loopback-next/wiki/Installation](https://github.com/strongloop/loopback-next/wiki/Installation).
 
-```
-git clone https://github.com/strongloop/loopback-next-hello-world.git
-cd loopback-next-hello-world
+2. Clone this repo: 
+	
+	`git clone https://github.com/strongloop/loopback-next-hello-world.git`
+
+3. Switch to your new directory: 
+	
+	`cd loopback-next-hello-world`
+
+4. Install your dependencies: 
+
+	```
 npm install -S @loopback/core
 npm install
-npm start
-# On another terminal, run the following curl command
-curl localhost:3000/helloworld?name=Joe
-# you should see "Hello world Joe!"
 ```
 
-> Note: `npm start` automatically builds the project via the `prestart` NPM script in package.json
+5. Start the application! 
+	
+	`npm start`
 
-## <a name="userfulCommands"></a>Useful app commands
+> Note: `npm start` automatically builds the project via the `prestart` npm script in `package.json`. If you would like to build this project separately, use `npm run build`.
 
-- Clone this project: `git clone https://github.com/strongloop/loopback-next-hello-world.git`
-- Building this project: `npm run build`
-- Running the application: `npm start`
-- Test your application: `npm test`
 
 ## <a name="testing"></a>Testing
+
+To test this application use `npm test`.
 
 ## <a name="structure"></a>Project structure
 
