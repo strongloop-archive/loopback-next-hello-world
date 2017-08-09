@@ -5,8 +5,8 @@ const app = createApp();
 
 const port = 3000;
 const server = http.createServer(app.handleHttp);
-server.listen(3000, (err) => {
+server.listen(port, (err) => {
   if (err) throw err;
-  console.log(`HTTP server listening on port ${3000}`);
-  console.log('Run `curl localhost:3000/helloworld?name=YOUR_NAME` to try it out');
+  console.log(`HTTP server listening on port ${port}`);
+  console.log('Run `curl localhost:${port}/helloworld?name=YOUR_NAME` to try it out');
 });
