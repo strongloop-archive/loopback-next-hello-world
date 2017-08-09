@@ -2,30 +2,44 @@
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/strongloop/loopback) [![Build Status](https://travis-ci.org/strongloop/loopback-next-quick-start.svg?branch=master)](https://travis-ci.org/strongloop/loopback-next-quick-start) [TODO Code coverage - coveralls]
 
-Welcome to the quick start tutorial for LoopBack.next + TypeScript!
-LoopBack makes it easy to build modern applications that require complex integrations. LoopBack.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
+## Table of Contents
+* [Overview](#overview)
+* [Setup](#setup)
+* [Useful App Commands](#usefulCommands)
+* [Testing](#testing)
+* [Project Structure](#structure)
+* [TypeScript Configuration](#typescriptConfiguration)
+* [Dependencies](#dependencies)
+* [Other Resources](#resources)
+* [Contribute](#contribute)
 
-Goal of tutorial
-Show you what a LoopBack.next app looks like and how the basics works
+## <a name="overview"></a>Overview
 
-what we're trying to do
-start a server to serve content
-make a request to the server to fetch content
+#### Welcome to the quick start tutorial for Loopback.next + TypeScript!
+Loopback makes it easy to build modern applications that require complex integrations. Loopback.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
 
-how we do it
-create a server
-add a custom component
-add a custom sequence
+The goal of this tutorial is to show you what a basic, 'hello-world' Loopback.next app looks like and how it works.
 
-What we'll do to the app:
-- Make a request to the server with a name and get back a HTTP 200 response
+This example will show you how to: 
 
-## Setup
+* create a Loopback.next server
+* make a request to the server to fetch content
 
-[CLEANUP]
-Before you clone ... 
-### Install `node`, `npm`, and `TypeScript` 
-You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. For the latest information on project dependencies for LoopBack, please check this link: 
+This example will explain:
+
+* the structure of a Loopback.next application
+* how to add a custom component (TK)
+* how add a custom sequence (TK)
+
+When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response: 
+
+[TODO: add screenshot of output here]
+
+## <a name="setup"></a>Setup 
+
+1. Install `node`, `npm`, and `TypeScript` 
+
+	You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. For the latest information on project dependencies for LoopBack, please check this link: 
 https://github.com/strongloop/loopback-next/wiki/Installation
 
 ```
@@ -41,14 +55,16 @@ curl localhost:3000/helloworld?name=Joe
 
 > Note: `npm start` automatically builds the project via the `prestart` NPM script in package.json
 
-## Useful app commands
+## <a name="userfulCommands"></a>Useful app commands
 
 - Clone this project: `git clone https://github.com/strongloop/loopback-next-hello-world.git`
 - Building this project: `npm run build`
 - Running the application: `npm start`
 - Test your application: `npm test`
 
-## Project structure
+## <a name="testing"></a>Testing
+
+## <a name="structure"></a>Project structure
 
 A TypeScript project will have separate `src` and `dist` directories, for source and distributable files. TypeScript (.ts) files from your `src` folder are compiled into JavaScript (.js) files and output in the `dist` folder.  
 
@@ -69,7 +85,7 @@ A TypeScript project will have separate `src` and `dist` directories, for source
 |test/|this directory contains your tests|
 |tsconfig.json|the configuration settings for TypeScript compilation|
 
-### TypeScript Configuration
+### <a name="typescriptConfiguration"></a>TypeScript Configuration
 
 [TODO]
 In your `tsconfig.json` file, you can specify options for TypeScript to use when compiling your project. 
@@ -97,18 +113,21 @@ Here is the `tsconfig.json` for this project:
 | `"baseUrl": "./src"`                   |  |
 | `experimentalDecorators`                     | enables support for decorators (more information: https://www.typescriptlang.org/docs/handbook/decorators.html)|
 
-## If you want to try coding up this example yourself [CLEANUP]
-
+### A note about editors
 We recommend you use [VSCode](https://code.visualstudio.com/) for this quick start because it has built-in TypeScript support, but you can use any editor. For more information about using TypeScript with your editor of choice, check out https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support.
 
 [TODO add a Need more help? link]
 
-## Dependencies
+## <a name="dependencies"></a>Dependencies
 
 [TODO]
 
-#Other questions:
+## <a name="resources"></a>Other Resources
+* Current [Loopback documentation](http://loopback.io)
+* [Loopback.next repo](https://github.com/strongloop/loopback-next)
+* Check out the [Strongloop blog](https://strongloop.com/strongblog/tag_LoopBack.html) for more posts about Loopback
+* To keep up-to-date with Loopback announcements, sign up for the Strongloop newsletter [here](https://strongloop.com/newsletter/).
 
-* do we add a top-level license file?
-* acknowledgments?
-* CTA for next steps, sign up for Loopback mailing list?
+## <a name="contribute"></a>Contribute to Loopback
+* [Guidelines](https://github.com/strongloop/loopback-next/wiki/Contributing#guidelines)
+* [Join the team](https://github.com/strongloop/loopback-next/issues/110)
