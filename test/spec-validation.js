@@ -3,7 +3,7 @@ const createApp = require('../dist/application').createApp;
 const expect = testlab.expect;
 const validateApiSpec = testlab.validateApiSpec;
 
-describe('Binding', () => {
+describe('Api Spec', () => {
   let app;
   let apiSpec;
   before(initApp);

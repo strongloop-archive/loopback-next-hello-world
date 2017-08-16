@@ -10,12 +10,16 @@ export const apiSpec =
             "in": "query",
             "description": "Your name.",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "x-example": "Ted"
           }
         ],
         "responses": {
           "200": {
-            "description": "Returns a hello world with your (optional) name."
+            "description": "Returns a hello world with your (optional) name.",
+            "examples": {
+              "text/plain": "Hello world Ted!"
+            }
           }
         }
       }
