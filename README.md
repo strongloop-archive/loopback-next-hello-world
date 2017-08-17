@@ -17,7 +17,7 @@
 #### Welcome to the quick start tutorial for Loopback.next + TypeScript!
 Loopback makes it easy to build modern applications that require complex integrations. 
 
-Loopback.next is the next version of LoopBack and is being designed to make it even easier to extend the framework for your own needs and will enable the latest ES features.
+Loopback.next, the next version of LoopBack, is being designed to make it even easier to extend the framework for your own needs. Loopback.next will also include the latest JavaScript features.
 
 The goal of this tutorial is to show you what a basic, 'hello-world' Loopback.next app looks like and how it works.
 
@@ -38,10 +38,12 @@ When you have this example installed and running, you will be able to make a req
 
 ## <a name="setup"></a>Setup 
 
-1. Install `node`, `npm`, and `TypeScript` 
+1. Install `node`:
 
-	You should have `node` (>= 7.6.0), `npm` (>= 3.10), and `TypeScript`  (>= 2.0.0) installed. 
+	You should have Node.js version 8.x or newer installed.
 	
+	_NOTE_: Want to switch Node versions quickly and easily? Try [`nvm`](https://github.com/creationix/nvm/blob/master/README.md). 
+		
 	For the latest information on project dependencies for LoopBack, please check this link: 
 [https://github.com/strongloop/loopback-next/wiki/Installation](https://github.com/strongloop/loopback-next/wiki/Installation).
 
@@ -55,10 +57,7 @@ When you have this example installed and running, you will be able to make a req
 
 4. Install your dependencies: 
 
-	```
-npm install -S @loopback/core
-npm install
-```
+	`npm install`
 
 5. Start the application! 
 	
@@ -73,28 +72,29 @@ To test this application use `npm test`.
 
 ## <a name="structure"></a>Project structure
 
-A TypeScript project will have separate `src` and `dist` directories, for source and distributable files. TypeScript (.ts) files from your `src` folder are compiled into JavaScript (.js) files and output in the `dist` folder.  
+A TypeScript project will have separate `src` and `lib` directories, for source and distributable files. TypeScript (.ts) files from your `src` folder are compiled into JavaScript (.js) files and output in the `lib` folder.  
 
 | Name | Description|
 |------|------------|
-|README.md|this file you're reading right now!|
-|dist|this directory contains the distributable code built by TypeScript. This is the code you deploy.|
+|.github/ISSUE_TEMPLATE.md|use this template to report an issue |
+|.github/PULL\_REQUEST\_TEMPLATE.MD|use this template to help you open a pull request |
+|lib/|this directory is created when you build your project and contains the distributable code built by TypeScript. This is the code you deploy.|
 |node_modules|this directory contains your npm modules|
-|package.json	|------------|
-|src|this directory contains your source code. TypeScript compiles this code and outputs it to the `dist/` directory.|
+|src/|this directory contains your source code. TypeScript compiles this code and outputs it to the `lib/` directory.|
+|src/controllers|------------|
+|src/controllers/hello-world.api.ts|the Open API Spec file|
+|src/controllers/hello-world.ts|------------|
+|src/providers/auth-strategy.ts|------------|
 |src/application.ts|------------|
-|src/components|------------|
-|src/components/controllers|------------|
-|src/components/controllers/hello-world.api.ts|the Open API Spec file|
-|src/components/controllers/hello-world.ts|------------|
-|src/components/index.ts|------------|
 |src/index.ts|------------|
+|src/sequence.ts|------------|
 |test/|this directory contains your tests|
+|package.json	|this documents this project's dependencies and their versions, and also includes important repository, author, and license information|
+|README.md|this file you're reading right now!|
 |tsconfig.json|the configuration settings for TypeScript compilation|
 
 ### <a name="typescriptConfiguration"></a>TypeScript Configuration
 
-[TODO]
 In your `tsconfig.json` file, you can specify options for TypeScript to use when compiling your project. 
 
 Here is the `tsconfig.json` for this project: 
@@ -102,8 +102,8 @@ Here is the `tsconfig.json` for this project:
 ```json{
   "compilerOptions": {                     
     "module": "commonjs",
-    "target": "es6",
-    "outDir": "./dist",
+    "target": "es2017",
+    "outDir": "./lib",
     "experimentalDecorators": true,
     "baseUrl": "./src"    
   },
@@ -115,13 +115,12 @@ Here is the `tsconfig.json` for this project:
 | compilerOption | Description |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | `"module": "commonjs"`             | The **output** module type (in your `.js` files). Node uses commonjs, so that is what we use          |
-| `"target": "es6"`                  | The output language level                               |
-| `"outDir": "./dist"`                 | Location to output `.js` files                                                        |
+| `"target": "es2017"`                  | The output language level                               |
+| `"outDir": "./lib"`                 | Location to output `.js` files                                                        |
 | `"baseUrl": "./src"`                   |  |
-| `experimentalDecorators`                     | enables support for decorators (more information: https://www.typescriptlang.org/docs/handbook/decorators.html)|
+| `experimentalDecorators`                     | enables support for decorators (more information: [https://www.typescriptlang.org/docs/handbook/decorators.html](https://www.typescriptlang.org/docs/handbook/decorators.html))|
 
-### A note about editors
-We recommend you use [VSCode](https://code.visualstudio.com/) for this quick start because it has built-in TypeScript support, but you can use any editor. For more information about using TypeScript with your editor of choice, check out https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support.
+_NOTE_: We recommend you use [VSCode](https://code.visualstudio.com/) for this hello-world example because it has built-in TypeScript support, but you can use any editor. For more information about using TypeScript with your editor of choice, check out [TypeScript Editor Support](https://github.com/Microsoft/TypeScript/wiki/TypeScript-Editor-Support).
 
 [TODO add a Need more help? link]
 
