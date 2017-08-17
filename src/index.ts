@@ -1,14 +1,21 @@
-import {Application} from '@loopback/core';
-import {HelloWorldController} from './controllers/hello-world';
-import * as http from 'http';
+// Copyright IBM Corp. 2017. All Rights Reserved.
+// Node module: @loopback/loopback-next-hello-world
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
+'use strict';
 
-const app = new Application();
-app.controller(HelloWorldController);
+import {CoreBindings} from '@loopback/core';
+import {HelloWorldApp} from './application';
 
-const port = 3000;
-const server = http.createServer(app.handleHttp);
-server.listen(3000, (err) => {
-  if (err) throw err;
-  console.log(`HTTP server listening on port ${3000}`);
-  console.log('Run `curl localhost:3000/helloworld?name=YOUR_NAME` to try it out');
-});
+const app = new HelloWorldApp();
+
+app.start().then(
+  () => {
+    let port = app.getSync(CoreBindings.HTTP_PORT);
+    console.log(`HTTP server listening on port ${port}`);
+    console.log(`Run \'curl localhost:${port}/helloworld?name=YOUR_NAME\' to try it out`);
+  },
+  err => {
+    console.error('Cannot start the application', err);
+    process.exit(1);
+  });

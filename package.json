@@ -1,14 +1,17 @@
 {
   "name": "loopback-next-hello-world",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A starting point for LoopBack.next apps using TypeScript",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "pretest": "npm run build",
     "test": "mocha",
     "prestart": "npm run build",
     "start": "node ."
+  },
+  "engines": {
+    "node": ">=8"
   },
   "keywords": [
     "loopback-next",
@@ -19,11 +22,16 @@
   "author": "IBM",
   "license": "MIT",
   "devDependencies": {
-    "@loopback/testlab": "^4.0.0-alpha.5",
+    "@loopback/testlab": "^4.0.0-alpha.6",
     "mocha": "^3.3.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {
-    "@loopback/core": "^4.0.0-alpha.10"
+    "@loopback/authentication": "^4.0.0-alpha.5",
+    "@loopback/core": "^4.0.0-alpha.11",
+    "@types/passport": "^0.3.3",
+    "@types/passport-http": "^0.3.2",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0"
   }
 }
