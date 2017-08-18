@@ -29,12 +29,12 @@ This example will show you how to:
 This example will explain:
 
 * the structure of a Loopback.next application
-* how to add a custom component (TK)
-* how add a custom sequence (TK)
+* how to add a custom component (TODO)
+* how add a custom sequence (TODO)
 
 When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response: 
 
-[TODO: add screenshot of output here]
+![screenshot](https://github.com/strongloop/loopback-next-hello-world/blob/master/hello-world-screenshot.png?raw=true)
 
 ## <a name="setup"></a>Setup 
 
