@@ -8,6 +8,8 @@
 * [Setup](#setup)
 * [Testing](#testing)
 * [Project Structure](#structure)
+* [Writing Controllers](#controllers)
+* [Using a Custom Sequence](#sequence)
 * [TypeScript Configuration](#typescriptConfiguration)
 * [Dependencies](#dependencies)
 * [Other Resources](#resources)
@@ -31,7 +33,7 @@ This example will explain:
 
 * the structure of a Loopback.next application
 * how to add a custom component (TODO)
-* how add a custom sequence (TODO)
+* how to add a custom sequence
 
 When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response: 
 
@@ -89,17 +91,33 @@ A TypeScript project will have separate `src` and `lib` directories, for source 
 |lib/|this directory is created when you build your project and contains the distributable code built by TypeScript. This is the code you deploy.|
 |node_modules|this directory contains your npm modules|
 |src/|this directory contains your source code. TypeScript compiles this code and outputs it to the `lib/` directory.|
-|src/controllers|------------|
-|src/controllers/hello-world.api.ts|the Open API Spec file|
-|src/controllers/hello-world.ts|------------|
-|src/providers/auth-strategy.ts|------------|
-|src/application.ts|------------|
-|src/index.ts|------------|
-|src/sequence.ts|------------|
+|src/controllers|This folder contains controllers, which implement the operations defined in your OpenAPI spec file|
+|src/controllers/hello-world.api.ts|the OpenAPI spec file|
+|src/controllers/hello-world.ts|this controller implements the helloWorld operation|
+|src/providers/|providers implement the functionalities defined by components|
+|src/providers/auth-strategy.ts|this file contains the authentication strategy that is bound to the [Authentication component](https://github.com/strongloop/loopback-next/tree/master/packages/authentication)|
+|src/application.ts|this file defines your application (components + sequence)|
+|src/index.ts|this is the entry point of your application|
+|src/sequence.ts|this file contains your custom sequence|
 |test/|this directory contains your tests|
 |package.json	|this documents this project's dependencies and their versions, and also includes important repository, author, and license information|
-|README.md|this file you're reading right now!|
+|README.md|this is the file you're reading right now!|
 |tsconfig.json|the configuration settings for TypeScript compilation|
+
+#### <a name="controllers"></a>Controllers
+
+Controllers implement the operations defined in your OpenAPI spec file. Find a guide to writing and testing controllers in LoopBack.next [here](https://github.com/strongloop/loopback-next/wiki/Thinking-in-LoopBack#implement-your-business-logic).
+
+#### <a name="sequence"></a>Adding a Custom Sequence
+
+A [sequence](https://github.com/strongloop/loopback-next/wiki/Sequence) is a stateless grouping of actions that allow you to control how your application responds to requests. All LoopBack.next applications have a default sequence with actions that find the route, parse the parameters, invoke the route (that is, runs the associated controller), await the result of that route, send the response, and catch any errors.
+
+You can create custom sequences that can inject new logic or behaviors at any point, accepting the output of any action and passing data on to the next action. Sequences must provide a response to a request, and they are registered when you define your application (in your `application.ts` file).
+
+````
+import {MySequence} from './sequence';
+````
+
 
 ### <a name="typescriptConfiguration"></a>TypeScript Configuration
 
