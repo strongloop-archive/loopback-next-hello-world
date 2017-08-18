@@ -4,6 +4,7 @@
 
 ## Table of Contents
 * [Overview](#overview)
+* [Background](#background)
 * [Setup](#setup)
 * [Testing](#testing)
 * [Project Structure](#structure)
@@ -14,7 +15,7 @@
 
 ## <a name="overview"></a>Overview
 
-#### Welcome to the quick start tutorial for Loopback.next + TypeScript!
+#### Welcome to the hello-world example for Loopback.next!
 Loopback makes it easy to build modern applications that require complex integrations. 
 
 Loopback.next, the next version of LoopBack, is being designed to make it even easier to extend the framework for your own needs. Loopback.next will also include the latest JavaScript features.
@@ -35,6 +36,13 @@ This example will explain:
 When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response: 
 
 ![screenshot](https://github.com/strongloop/loopback-next-hello-world/blob/master/hello-world-screenshot.png?raw=true)
+
+## <a name="background"></a>Background
+
+For in-depth information about the concepts underlying Loopback.next, check out these wiki pages:
+
+* [Crafting LoopBack Next](https://github.com/strongloop/loopback-next/wiki/Crafting-LoopBack-Next)
+* [Thinking in LoopBack](https://github.com/strongloop/loopback-next/wiki/Thinking-in-LoopBack)
 
 ## <a name="setup"></a>Setup 
 
