@@ -1,14 +1,16 @@
 // Copyright IBM Corp. 2017. All Rights Reserved.
-// Node module: @loopback/loopback-next-hello-world
+// Node module: loopback-next-hello-world
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 'use strict';
 
-const HelloWorldApp = require('../lib/application').HelloWorldApp;
-const validateApiSpec = require('@loopback/testlab').validateApiSpec;
+import {HelloWorldApp} from '../..';
+import {Application} from '@loopback/core';
+import {OpenApiSpec} from '@loopback/openapi-spec';
+import {validateApiSpec} from '@loopback/testlab';
 
 describe('Api Spec', () => {
-  let apiSpec;
+  let apiSpec: OpenApiSpec;
   before(initApiSpec);
 
   describe('validate Api Spec', () => {
@@ -19,7 +21,8 @@ describe('Api Spec', () => {
   });
 
   function initApiSpec() {
-    let app = new HelloWorldApp();
+    let app: Application = new HelloWorldApp();
     apiSpec = app.getApiSpec();
   }
+
 });

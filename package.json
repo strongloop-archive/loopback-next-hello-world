@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "pretest": "npm run build",
-    "test": "mocha",
+    "test": "mocha --opts test/mocha.opts 'test/unit/**/*.ts'",
     "prestart": "npm run build",
     "start": "node ."
   },
@@ -22,9 +22,12 @@
   "author": "IBM",
   "license": "MIT",
   "devDependencies": {
+    "@loopback/openapi-spec": "^4.0.0-alpha.8",
     "@loopback/testlab": "^4.0.0-alpha.6",
+    "@types/mocha": "^2.2.41",
     "dredd": "^4.3.0",
-    "mocha": "^3.3.0",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {

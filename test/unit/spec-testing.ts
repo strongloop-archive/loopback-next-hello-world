@@ -1,19 +1,20 @@
 // Copyright IBM Corp. 2017. All Rights Reserved.
-// Node module: @loopback/loopback-next-hello-world
+// Node module: loopback-next-hello-world
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 'use strict';
 
-const {CoreBindings} = require('@loopback/core');
-const Dredd = require('dredd');
-const expect = require('@loopback/testlab').expect;
-const HelloWorldApp = require('../lib/application').HelloWorldApp;
+import {Application, CoreBindings} from '@loopback/core';
+import Dredd = require('dredd');
+import {expect} from '@loopback/testlab';
+import {HelloWorldApp} from '../..';
 
 describe('Api Spec End Points', () => {
   let dredd;
   before(initEnvironment);
 
   describe('input/output test', () => {
+
     it('passes match', done => {
       dredd.run((err, stats) => {
         expect(err).to.be.eql(null);
@@ -26,11 +27,11 @@ describe('Api Spec End Points', () => {
   });
 
   async function initEnvironment() {
-    const app = new HelloWorldApp();
+    const app: Application = new HelloWorldApp();
     await app.start();
-    const port = await app.get(CoreBindings.HTTP_PORT);
-    const localhostAndPort = 'http://localhost:' + port;
-    const config = {
+    const port: number = await app.get(CoreBindings.HTTP_PORT);
+    const localhostAndPort: string = 'http://localhost:' + port;
+    const config: object = {
       server: localhostAndPort, // base path to the end points
       options: {
         level: 'verbose',
