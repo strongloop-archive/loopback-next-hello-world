@@ -16,6 +16,9 @@ export class HelloWorldApp extends Application {
     super({
       components: [AuthenticationComponent],
       sequence: MySequence,
+      http: {
+        port: 0,
+      },
     });
     this.bind(AuthenticationBindings.STRATEGY)
       .toProvider(MyAuthStrategyProvider);

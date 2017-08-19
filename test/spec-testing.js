@@ -4,66 +4,41 @@
 // License text available at https://opensource.org/licenses/MIT
 'use strict';
 
+const {CoreBindings} = require('@loopback/core');
 const Dredd = require('dredd');
 const expect = require('@loopback/testlab').expect;
 const HelloWorldApp = require('../lib/application').HelloWorldApp;
-const http = require('http');
-
-const port = 3030; // use this port for Dredd testing only
-const localhost = 'http://localhost:' + port;
-const dreddConfig = {
-  server: localhost + '/', // base path to the end points
-  options: {
-    level: 'verbose',
-    silent: true, // false for helpful debugging info
-    path: [localhost + '/openapi.json'], // to download apiSpec from the service
-  }
-};
 
 describe('Api Spec End Points', () => {
-  let server;
-  let error;
-  let ctFailures;
-  beforeEach(done => {
-    initEnvironment(dreddConfig, (dredd) => {
-      testApi(dredd, done);
-    });
-  });
-  afterEach(done => {
-    server.close();
-    done();
-  });
+  let dredd;
+  before(initEnvironment);
 
-  describe('Test end points', () => {
-    it('passes "req parameter and res result" match test', () => {
-      expect(error).to.be.eql(null);
-      expect(ctFailures).to.be.eql(0);
+  describe('input/output test', () => {
+    it('passes match', done => {
+      dredd.run((err, stats) => {
+        expect(err).to.be.eql(null);
+        expect(stats.failures).to.be.eql(0);
+        expect(stats.errors).to.be.eql(0);
+        expect(stats.skipped).to.be.eql(0);
+        done();
+      });
     });
   });
 
-  function testApi(dredd, done) {
-    dredd.run((err, stats) => {
-      // err is present if anything went wrong and stats is nill
-      error = err;
-      // otherwise stats is an object with useful statistics
-      ctFailures = failureCount(stats);
-      done();
-    });
-  }
-
-  async function initEnvironment(config, next) {
+  async function initEnvironment() {
     const app = new HelloWorldApp();
-    const svr = http.createServer(app.handleHttp);
-    svr.listen(port, (err) => {
-      if (err) throw err;
-      server = svr;
-      next(new Dredd(config));
-    });
-  }
-
-  function failureCount(stats) {
-    if (!stats) return -1;
-    return (stats.failures + stats.errors);
+    await app.start();
+    const port = await app.get(CoreBindings.HTTP_PORT);
+    const localhostAndPort = 'http://localhost:' + port;
+    const config = {
+      server: localhostAndPort, // base path to the end points
+      options: {
+        level: 'verbose',
+        silent: true, // false for helpful debugging info
+        path: [localhostAndPort + '/openapi.json'], // to download apiSpec from the service
+      }
+    };
+    dredd = new Dredd(config);
   }
 
 });
