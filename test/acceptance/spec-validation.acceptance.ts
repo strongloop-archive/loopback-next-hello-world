@@ -14,6 +14,7 @@ describe('Api Spec', () => {
   describe('validate Api Spec', () => {
 
     it('is valid', async () => {
+      console.log(apiSpec);
       await validateApiSpec(apiSpec);
     });
   });
