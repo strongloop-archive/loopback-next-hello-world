@@ -117,9 +117,9 @@ A [sequence](https://github.com/strongloop/loopback-next/wiki/Sequence) is a sta
 
 You can create custom sequences that can inject new logic or behaviors at any point, accepting the output of any action and passing data on to the next action. Sequences must provide a response to a request, and they are registered when you define your application (in your `application.ts` file).
 
-````
+```ts
 import {MySequence} from './sequence';
-````
+```
 
 
 ### <a name="typescriptConfiguration"></a>TypeScript Configuration
