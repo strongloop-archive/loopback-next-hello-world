@@ -119,6 +119,7 @@ You can create custom sequences that can inject new logic or behaviors at any po
 
 ```ts
 import {MySequence} from './sequence';
+app.sequence(MySequence);
 ```
 
 
