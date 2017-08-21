@@ -20,4 +20,4 @@ if (require.main === module.parent) {
       console.error('Cannot start the application', err);
       process.exit(1);
     });
-} 
+}

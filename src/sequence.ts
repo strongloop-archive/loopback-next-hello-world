@@ -40,7 +40,7 @@ export class MySequence implements SequenceHandler {
 
       setFakeAuthorizationHeader(req);
 
-      const user = await this.authenticateRequest(req);
+      //const user = await this.authenticateRequest(req);
 
       const args = await this.parseParams(req, route);
       const result = await this.invoke(route, args);
