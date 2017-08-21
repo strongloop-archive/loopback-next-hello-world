@@ -6,12 +6,7 @@
 
 export const controllerSpec =
 {
-  "swagger": "2.0",
   "basePath": "/",
-  "info": {
-    "title": "LoopBack Application",
-    "version": "1.0.0",
-  },
   "paths": {
     "/helloworld": {
       "get": {

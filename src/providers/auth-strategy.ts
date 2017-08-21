@@ -2,8 +2,6 @@
 // Node module: loopback-next-hello-world
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
-'use strict';
-
 import {
   inject,
   Provider,

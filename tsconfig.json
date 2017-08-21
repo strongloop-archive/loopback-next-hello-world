@@ -1,9 +1,12 @@
 {
   "compilerOptions": {                     
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict" : true,
+
     "target": "es6",
     "module": "commonjs",
     "outDir": "./lib",
-    "experimentalDecorators": true,
     "baseUrl": "./src"    
   },
   "exclude": [

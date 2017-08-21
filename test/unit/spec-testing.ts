@@ -2,41 +2,51 @@
 // Node module: loopback-next-hello-world
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
-'use strict';
-
 import {Application, CoreBindings} from '@loopback/core';
-import Dredd = require('dredd');
+var Dredd = require('dredd');
 import {expect} from '@loopback/testlab';
 import {HelloWorldApp} from '../..';
 
 describe('Api Spec End Points', () => {
-  let dredd;
+  let dredd: any;
   before(initEnvironment);
 
   describe('input/output test', () => {
 
     it('passes match', done => {
-      dredd.run((err, stats) => {
-        expect(err).to.be.eql(null);
-        expect(stats.failures).to.be.eql(0);
-        expect(stats.errors).to.be.eql(0);
-        expect(stats.skipped).to.be.eql(0);
+      dredd.run((err: Error, stats: object) => {
+        if (err) return done(err);
+        expect(stats).to.containDeep({
+          failures: 0,
+          errors: 0,
+          skipped: 0,
+        });
         done();
       });
     });
   });
 
   async function initEnvironment() {
+    // By default, the port is set to 3000.
     const app: Application = new HelloWorldApp();
+    // For testing, we'll let the OS pick an available port by setting
+    // CoreBindings.HTTP_PORT to 0.
+    app.bind(CoreBindings.HTTP_PORT).to(0);
+    // app.start() starts up the HTTP server and binds the acquired port
+    // number to CoreBindings.HTTP_PORT.
     await app.start();
+    // Get the real port number.
     const port: number = await app.get(CoreBindings.HTTP_PORT);
+    console.log(`Spec Test server listening on port ${port}`);
+    console.log(`Run \'curl localhost:${port}/helloworld?name=YOUR_NAME\' to try it out`);
     const localhostAndPort: string = 'http://localhost:' + port;
     const config: object = {
       server: localhostAndPort, // base path to the end points
       options: {
         level: 'verbose',
-        silent: true, // false for helpful debugging info
+        silent: true, // false for helpful debugging info such as hooks
         path: [localhostAndPort + '/openapi.json'], // to download apiSpec from the service
+        hookfiles: [__dirname + '/spec-testing-hooks.js'],
       }
     };
     dredd = new Dredd(config);
