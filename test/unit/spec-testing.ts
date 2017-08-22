@@ -37,16 +37,13 @@ describe('Api Spec End Points', () => {
     await app.start();
     // Get the real port number.
     const port: number = await app.get(CoreBindings.HTTP_PORT);
-    console.log(`Spec Test server listening on port ${port}`);
-    console.log(`Run \'curl localhost:${port}/helloworld?name=YOUR_NAME\' to try it out`);
     const localhostAndPort: string = 'http://localhost:' + port;
     const config: object = {
       server: localhostAndPort, // base path to the end points
       options: {
-        level: 'verbose',
-        silent: true, // false for helpful debugging info such as hooks
+        level: 'fail', // report 'fail' case only
+        silent: false, // false for helpful debugging info
         path: [localhostAndPort + '/openapi.json'], // to download apiSpec from the service
-        hookfiles: [__dirname + '/spec-testing-hooks.js'],
       }
     };
     dredd = new Dredd(config);
