@@ -22,12 +22,17 @@
   "author": "IBM",
   "license": "MIT",
   "devDependencies": {
+    "@loopback/openapi-spec": "^4.0.0-alpha.8",
     "@loopback/testlab": "^4.0.0-alpha.6",
-    "mocha": "^3.3.0",
+    "@types/mocha": "^2.2.41",
+    "dredd": "^4.3.0",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {
     "@loopback/authentication": "^4.0.0-alpha.5",
+    "@loopback/context": "^4.0.0-alpha.11",
     "@loopback/core": "^4.0.0-alpha.11",
     "@types/passport": "^0.3.3",
     "@types/passport-http": "^0.3.2",

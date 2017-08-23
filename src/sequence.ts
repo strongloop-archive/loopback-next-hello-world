@@ -1,3 +1,7 @@
+// Copyright IBM Corp. 2017. All Rights Reserved.
+// Node module: loopback-next-hello-world
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
 import {
   CoreBindings,
   FindRoute,
@@ -47,7 +51,7 @@ export class MySequence implements SequenceHandler {
   }
 }
 
-function setFakeAuthorizationHeader(req) {
+function setFakeAuthorizationHeader(req: ParsedRequest) {
   var parts = [
     // schema
     'Basic',
@@ -55,5 +59,4 @@ function setFakeAuthorizationHeader(req) {
     'YTph',
   ];
   req.headers['authorization'] = parts.join(' ');
-  return req;
 }
