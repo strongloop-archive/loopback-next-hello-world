@@ -9,7 +9,7 @@ import {MyAuthStrategyProvider} from './providers/auth-strategy';
 import {HelloWorldController} from './controllers/hello-world';
 import {MySequence} from './sequence';
 import {spec} from './spec';
-import {ProductController} from './controllers/product.controller';
+import {ProductController} from './controllers/product-controller';
 
 export class HelloWorldApp extends Application {
   constructor() {

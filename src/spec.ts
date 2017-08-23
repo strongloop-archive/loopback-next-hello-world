@@ -6,7 +6,7 @@ export const spec: OpenApiSpec = {
     title: "Hello world app",
     version: require("../package.json").version
   },
-  basePath: "/api",
+  basePath: "/",
   paths: {
     /*
     "/deals": {
