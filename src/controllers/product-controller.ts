@@ -4,5 +4,10 @@
 // License text available at https://opensource.org/licenses/MIT
 
 export class ProductController {
-
+  async getDetails(slug: string) {
+    return {
+      name: 'Ink Pen',
+      slug: 'ink-pen',
+    };
+  }
 }

@@ -6,6 +6,8 @@ import {CoreBindings} from '@loopback/core';
 import {HelloWorldApp} from './application';
 export {HelloWorldApp};
 
+export {ProductController} from './controllers/product-controller';
+
 if (require.main === module.parent) {
   // executed from the console
   const app = new HelloWorldApp();
