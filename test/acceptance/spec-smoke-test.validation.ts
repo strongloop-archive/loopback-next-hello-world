@@ -43,7 +43,7 @@ describe('Api Spec End Points', () => {
       options: {
         level: 'fail', // report 'fail' case only
         silent: false, // false for helpful debugging info
-        path: [localhostAndPort + '/openapi.json'], // to download apiSpec from the service
+        path: [localhostAndPort + '/swagger.json'], // to download apiSpec from the service
       }
     };
     dredd = new Dredd(config);
