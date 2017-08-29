@@ -6,6 +6,11 @@ import {CoreBindings} from '@loopback/core';
 import {HelloWorldApp} from './application';
 export {HelloWorldApp};
 
+export * from './controllers/product.controller';
+export * from './models/product.model';
+export * from './repositories/product.repository';
+export * from './datasources/db.datasource';
+
 if (require.main === module.parent) {
   // executed from the console
   const app = new HelloWorldApp();
@@ -20,4 +25,4 @@ if (require.main === module.parent) {
       console.error('Cannot start the application', err);
       process.exit(1);
     });
-} 
+}
