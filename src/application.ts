@@ -9,7 +9,8 @@ import {MyAuthStrategyProvider} from './providers/auth-strategy';
 import {HelloWorldController} from './controllers/hello-world';
 import {MySequence} from './sequence';
 import {spec} from './spec';
-import {ProductController} from './controllers/product-controller';
+import {ProductController} from './controllers/product.controller';
+import {ProductRepository} from './repositories/product.repository';
 
 export class HelloWorldApp extends Application {
   constructor() {
@@ -22,5 +23,6 @@ export class HelloWorldApp extends Application {
       .toProvider(MyAuthStrategyProvider);
     this.controller(HelloWorldController);
     this.controller(ProductController);
+    this.bind('repositories.Product').toClass(ProductRepository);
   }
 }

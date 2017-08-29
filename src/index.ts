@@ -6,7 +6,10 @@ import {CoreBindings} from '@loopback/core';
 import {HelloWorldApp} from './application';
 export {HelloWorldApp};
 
-export {ProductController} from './controllers/product-controller';
+export * from './controllers/product.controller';
+export * from './models/product.model';
+export * from './repositories/product.repository';
+export * from './datasources/db.datasource';
 
 if (require.main === module.parent) {
   // executed from the console

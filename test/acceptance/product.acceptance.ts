@@ -6,6 +6,7 @@
 import {HelloWorldApp} from '../..';
 import {CoreBindings} from '@loopback/core';
 import {expect, supertest, Client} from '@loopback/testlab';
+import {givenEmptyDatabase, givenProduct} from '../helpers/database.helpers';
 
 describe('Product (acceptance)', () => {
   let app: HelloWorldApp;
@@ -23,6 +24,8 @@ describe('Product (acceptance)', () => {
       category: 'Stationery',
       description: 'The ultimate ink-powered pen for daily writing',
       label: 'popular',
+      available: true,
+      endDate: null,
     });
 
     // act
@@ -42,10 +45,6 @@ describe('Product (acceptance)', () => {
     });
   });
 
-  async function givenEmptyDatabase() {
-    // TODO
-  }
-
   async function givenRunningApp() {
     app = new HelloWorldApp();
 
@@ -54,10 +53,5 @@ describe('Product (acceptance)', () => {
 
     const port: number = await app.get(CoreBindings.HTTP_PORT);
     request = supertest(`http://127.0.0.1:${port}`);
-  }
-
-  async function givenProduct(data: Object) {
-    // TODO
-    return Object.assign({}, data, {id: 1});
   }
 });

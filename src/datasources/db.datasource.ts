@@ -3,11 +3,8 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-export class ProductController {
-  async getDetails(slug: string) {
-    return {
-      name: 'Ink Pen',
-      slug: 'ink-pen',
-    };
-  }
-}
+import {juggler, DataSourceConstructor} from '@loopback/repository';
+
+export const db = new DataSourceConstructor({
+  connector: 'memory',
+});

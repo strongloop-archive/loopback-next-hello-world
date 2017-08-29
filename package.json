@@ -33,6 +33,7 @@
     "@loopback/authentication": "^4.0.0-alpha.5",
     "@loopback/context": "^4.0.0-alpha.11",
     "@loopback/core": "^4.0.0-alpha.11",
+    "@loopback/repository": "^4.0.0-alpha.7.tgz",
     "@types/mocha": "^2.2.41",
     "@types/passport": "^0.3.3",
     "@types/passport-http": "^0.3.2",
