@@ -30,6 +30,23 @@ describe('ProductController', () => {
       });
       expect(findStub).to.be.calledWithMatch({where: {slug: 'ink-pen'}});
     });
+
+    it('returns 404 Not Found for an unknown slug', async () => {
+      const controller = new ProductController(repository);
+      const findStub = repository.find as sinon.SinonStub;
+      findStub.resolves([]);
+
+      let error: Error;
+      try {
+        await controller.getDetails('unknown-slug');
+      } catch (err) {
+        error = err;
+      }
+
+      expect.exists(error, 'getDetails should have thrown and error');
+      expect(error).to.have.property('statusCode', 404);
+      expect(error.message).to.match(/not found/i);
+    });
   });
 
   function givenStubbedRepository() {

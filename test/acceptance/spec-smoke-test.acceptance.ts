@@ -6,12 +6,14 @@ import {Application, CoreBindings} from '@loopback/core';
 var Dredd = require('dredd');
 import {expect} from '@loopback/testlab';
 import {HelloWorldApp} from '../..';
+import {givenProduct, givenEmptyDatabase} from '../helpers/database.helpers';
 
 describe('Api Spec End Points', () => {
   let dredd: any;
   before(initEnvironment);
 
   describe('input/output test', () => {
+    before(setupTestData);
 
     it('passes match', done => {
       dredd.run((err: Error, stats: object) => {
@@ -49,4 +51,8 @@ describe('Api Spec End Points', () => {
     dredd = new Dredd(config);
   }
 
+  async function setupTestData() {
+    await givenEmptyDatabase();
+    await givenProduct({name: 'pen', slug: 'pen'});
+  }
 });
