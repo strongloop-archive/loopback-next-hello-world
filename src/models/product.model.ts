@@ -14,26 +14,26 @@ export class Product extends Entity {
   })
   id: number;
 
-  @property({type: 'string'})
+  @property({type: 'string', required: true})
   name: string;
 
-  @property({type: 'string'})
+  @property({type: 'string', required: true})
   slug: string;
 
-  @property({type: 'boolean'})
+  @property({type: 'number', required: true})
+  price: number;
+
+  @property({type: 'string', required: true})
+  description: string;
+
+  @property({type: 'boolean', required: true})
   available: boolean;
 
   @property({type: 'string'})
   category: string;
 
   @property({type: 'string'})
-  description: string;
-
-  @property({type: 'string'})
   label: string;
-
-  @property({type: 'number'})
-  price: number;
 
   @property({type: 'date'})
   endDate: Date;

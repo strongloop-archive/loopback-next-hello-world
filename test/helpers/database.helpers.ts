@@ -10,5 +10,11 @@ export async function givenEmptyDatabase() {
 }
 
 export async function givenProduct(data: Partial<Product>) {
-  return await new ProductRepository().create(data);
+  return await new ProductRepository().create(Object.assign({
+    name: 'a-product-name',
+    slug: 'a-product-slug',
+    price: 1,
+    description: 'a-product-description',
+    available: true,
+  }, data));
 }
