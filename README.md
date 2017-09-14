@@ -53,7 +53,7 @@ For in-depth information about the concepts underlying Loopback.next, check out:
 	> NOTE: Want to switch Node versions quickly and easily? Try [`nvm`](https://github.com/creationix/nvm/blob/master/README.md). 
 		
 	For the latest information on project dependencies for LoopBack, please check this link: 
-[hhttp://loopback.io/doc/en/lb4/Installation.html](http://loopback.io/doc/en/lb4/Installation.html).
+[http://loopback.io/doc/en/lb4/Installation.html](http://loopback.io/doc/en/lb4/Installation.html).
 
 2. Clone this repo: 
 	
