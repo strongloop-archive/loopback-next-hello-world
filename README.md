@@ -35,16 +35,14 @@ This example will explain:
 * how to add a custom component (TODO)
 * how to add a custom sequence
 
-When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response: 
-
-![screenshot](https://github.com/strongloop/loopback-next-hello-world/blob/master/hello-world-screenshot.png?raw=true)
+When you have this example installed and running, you will be able to make a request to the server with a name and get back a HTTP 200 response.
 
 ## <a name="background"></a>Background
 
-For in-depth information about the concepts underlying Loopback.next, check out these wiki pages:
+For in-depth information about the concepts underlying Loopback.next, check out:
 
-* [Crafting LoopBack Next](https://github.com/strongloop/loopback-next/wiki/Crafting-LoopBack-Next)
-* [Thinking in LoopBack](https://github.com/strongloop/loopback-next/wiki/Thinking-in-LoopBack)
+* [Crafting LoopBack Next](http://loopback.io/doc/en/lb4/Crafting-LoopBack-Next.html)
+* [Thinking in LoopBack](http://loopback.io/doc/en/lb4/Thinking-in-LoopBack.html)
 
 ## <a name="setup"></a>Setup 
 
@@ -55,7 +53,7 @@ For in-depth information about the concepts underlying Loopback.next, check out 
 	> NOTE: Want to switch Node versions quickly and easily? Try [`nvm`](https://github.com/creationix/nvm/blob/master/README.md). 
 		
 	For the latest information on project dependencies for LoopBack, please check this link: 
-[https://github.com/strongloop/loopback-next/wiki/Installation](https://github.com/strongloop/loopback-next/wiki/Installation).
+[hhttp://loopback.io/doc/en/lb4/Installation.html](http://loopback.io/doc/en/lb4/Installation.html).
 
 2. Clone this repo: 
 	
@@ -78,6 +76,15 @@ For in-depth information about the concepts underlying Loopback.next, check out 
 ## <a name="tryitout"></a>Try It Out!
 
 Run `curl localhost:3000/helloworld?name=YOUR_NAME` to try out your new LoopBack server.
+
+Example:
+```
+curl localhost:3000/helloworld?name=Anne
+```
+The output will be:
+```
+Hello world Anne {"username":"a","password":"a"}
+```
 
 ## <a name="testing"></a>Testing
 
@@ -109,11 +116,11 @@ A TypeScript project will have separate `src` and `lib` directories, for source 
 
 #### <a name="controllers"></a>Controllers
 
-Controllers implement the operations defined in your OpenAPI spec file. Find a guide to writing and testing controllers in LoopBack.next [here](https://github.com/strongloop/loopback-next/wiki/Thinking-in-LoopBack#implement-your-business-logic).
+Controllers implement the operations defined in your OpenAPI spec file. Find a guide to writing and testing controllers in LoopBack.next [here](http://loopback.io/doc/en/lb4/Thinking-in-LoopBack.html#incrementally-implement-features).
 
 #### <a name="sequence"></a>Adding a Custom Sequence
 
-A [sequence](https://github.com/strongloop/loopback-next/wiki/Sequence) is a stateless grouping of actions that allow you to control how your application responds to requests. All LoopBack.next applications have a default sequence with actions that find the route, parse the parameters, invoke the route (that is, runs the associated controller), await the result of that route, send the response, and catch any errors.
+A [sequence](http://loopback.io/doc/en/lb4/Sequence.html) is a stateless grouping of actions that allow you to control how your application responds to requests. All LoopBack.next applications have a default sequence with actions that find the route, parse the parameters, invoke the route (that is, runs the associated controller), await the result of that route, send the response, and catch any errors.
 
 You can create custom sequences that can inject new logic or behaviors at any point, accepting the output of any action and passing data on to the next action. Sequences must provide a response to a request, and they are registered when you define your application (in your `application.ts` file).
 
@@ -162,5 +169,5 @@ Find more information about TypeScript [here](https://www.typescriptlang.org/doc
 * To keep up-to-date with LoopBack announcements, sign up for the Strongloop newsletter [here](https://strongloop.com/newsletter/).
 
 ## <a name="contribute"></a>Contribute to LoopBack
-* [Guidelines](https://github.com/strongloop/loopback-next/wiki/Contributing#guidelines)
-* [Join the team](https://github.com/strongloop/loopback-next/issues/110)
+* [Guidelines](http://loopback.io/doc/en/contrib/index.html)
+* [Join the LoopBack.next contributors list](https://github.com/strongloop/loopback-next/issues/110)
