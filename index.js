@@ -1,2 +1,8 @@
+// Copyright IBM Corp. 2017. All Rights Reserved.
+// Node module: loopback-next-hello-world
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
+
 "use strict";
-exports.__esModule = true;
+
+module.exports = require('./lib/index.js');
