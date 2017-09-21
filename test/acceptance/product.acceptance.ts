@@ -25,7 +25,7 @@ describe('Product (acceptance)', () => {
       description: 'The ultimate ink-powered pen for daily writing',
       label: 'popular',
       available: true,
-      endDate: null,
+      endDate: undefined,
     });
 
     // act
@@ -41,7 +41,7 @@ describe('Product (acceptance)', () => {
       available: true,
       description: 'The ultimate ink-powered pen for daily writing',
       label: 'popular',
-      endDate: null,
+      endDate: undefined,
     });
   });
 

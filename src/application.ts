@@ -24,5 +24,7 @@ export class HelloWorldApp extends Application {
     this.controller(HelloWorldController);
     this.controller(ProductController);
     this.bind('repositories.Product').toClass(ProductRepository);
+
+    this.bind('sequence.actions.log').to((msg: string) => console.log(msg));
   }
 }

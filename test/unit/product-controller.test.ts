@@ -36,14 +36,17 @@ describe('ProductController', () => {
       const findStub = repository.find as sinon.SinonStub;
       findStub.resolves([]);
 
-      let error: Error;
+      let error: Error | undefined = undefined;
       try {
         await controller.getDetails('unknown-slug');
       } catch (err) {
         error = err;
       }
 
-      expect.exists(error, 'getDetails should have thrown and error');
+      if (!error) {
+        throw new Error('getDetails should have thrown an error');
+      }
+
       expect(error).to.have.property('statusCode', 404);
       expect(error.message).to.match(/not found/i);
     });
