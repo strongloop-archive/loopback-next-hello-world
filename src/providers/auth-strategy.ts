@@ -2,16 +2,11 @@
 // Node module: loopback-next-hello-world
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
-import {
-  inject,
-  Provider,
-  ValueOrPromise,
-} from '@loopback/context';
+import {inject, Provider, ValueOrPromise} from '@loopback/context';
 import {
   AuthenticationBindings,
   AuthenticationMetadata,
 } from '@loopback/authentication';
-
 import {Strategy} from 'passport';
 import {BasicStrategy} from 'passport-http';
 
@@ -21,8 +16,7 @@ export class MyAuthStrategyProvider implements Provider<Strategy> {
     private metadata: AuthenticationMetadata,
   ) {}
 
-
-  value() : ValueOrPromise<Strategy> {
+  value(): ValueOrPromise<Strategy> {
     const name = this.metadata.strategy;
     if (name === 'BasicStrategy') {
       return new BasicStrategy(this.verify);

@@ -3,9 +3,8 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 import {
-  CoreBindings,
+  RestBindings,
   FindRoute,
-  inject,
   InvokeMethod,
   ParseParams,
   parseOperationArgs,
@@ -14,19 +13,18 @@ import {
   Send,
   ServerResponse,
   SequenceHandler,
-} from '@loopback/core';
+} from '@loopback/rest';
+import {inject} from '@loopback/core';
 
-const CoreSequenceActions = CoreBindings.SequenceActions;
+const CoreSequenceActions = RestBindings.SequenceActions;
 
-import {
-  AuthenticateFn,
-  AuthenticationBindings,
-} from '@loopback/authentication';
+import {AuthenticateFn, AuthenticationBindings} from '@loopback/authentication';
 
 export class MySequence implements SequenceHandler {
   constructor(
     @inject(CoreSequenceActions.FIND_ROUTE) protected findRoute: FindRoute,
-    @inject(CoreSequenceActions.PARSE_PARAMS) protected parseParams: ParseParams,
+    @inject(CoreSequenceActions.PARSE_PARAMS)
+    protected parseParams: ParseParams,
     @inject(CoreSequenceActions.INVOKE_METHOD) protected invoke: InvokeMethod,
     @inject(CoreSequenceActions.SEND) protected send: Send,
     @inject(CoreSequenceActions.REJECT) protected reject: Reject,

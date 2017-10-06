@@ -6,13 +6,13 @@ import {Application, CoreBindings} from '@loopback/core';
 var Dredd = require('dredd');
 import {expect} from '@loopback/testlab';
 import {HelloWorldApp} from '../..';
+import {RestServer, RestBindings} from '@loopback/rest';
 
 describe('Api Spec End Points', () => {
   let dredd: any;
   before(initEnvironment);
 
   describe('input/output test', () => {
-
     it('passes match', done => {
       dredd.run((err: Error, stats: object) => {
         if (err) return done(err);
@@ -31,12 +31,13 @@ describe('Api Spec End Points', () => {
     const app: Application = new HelloWorldApp();
     // For testing, we'll let the OS pick an available port by setting
     // CoreBindings.HTTP_PORT to 0.
-    app.bind(CoreBindings.HTTP_PORT).to(0);
+    const restServer: RestServer = await app.getServer(RestServer);
+    restServer.bind(RestBindings.PORT).to(0);
     // app.start() starts up the HTTP server and binds the acquired port
     // number to CoreBindings.HTTP_PORT.
     await app.start();
     // Get the real port number.
-    const port: number = await app.get(CoreBindings.HTTP_PORT);
+    const port: number = await restServer.get(RestBindings.PORT);
     const localhostAndPort: string = 'http://localhost:' + port;
     const config: object = {
       server: localhostAndPort, // base path to the end points
@@ -44,9 +45,8 @@ describe('Api Spec End Points', () => {
         level: 'fail', // report 'fail' case only
         silent: false, // false for helpful debugging info
         path: [localhostAndPort + '/swagger.json'], // to download apiSpec from the service
-      }
+      },
     };
     dredd = new Dredd(config);
   }
-
 });

@@ -4,16 +4,38 @@
 // License text available at https://opensource.org/licenses/MIT
 'use strict';
 
-import {api, inject} from '@loopback/core';
-import {controllerSpec} from './hello-world.api';
-import {authenticate, AuthenticationBindings, UserProfile} from '@loopback/authentication';
+import {inject} from '@loopback/core';
+import {api} from '@loopback/rest';
+import {helloWorldApi} from '../apidefs/hello-world.api';
+import {
+  authenticate,
+  AuthenticationMetadata,
+  AuthenticationBindings,
+  UserProfile,
+} from '@loopback/authentication';
+import {UserRepository} from '../repositories/user.repository';
+import {User} from '../models/user.model';
 
-@api(controllerSpec)
+@api(helloWorldApi)
 export class HelloWorldController {
-  constructor(@inject(AuthenticationBindings.CURRENT_USER) private user: UserProfile) {}
+  constructor(
+    @inject(AuthenticationBindings.CURRENT_USER) private user: UserProfile,
+    @inject('repositories.UserRepository') private repository: UserRepository,
+  ) {}
 
   @authenticate('BasicStrategy')
-  helloWorld(name: string) {
-      return `Hello world ${name} ` + JSON.stringify(this.user);
+  async helloWorld(name?: string) {
+    return `Hello world ${name} ` + JSON.stringify(this.user);
+  }
+
+  @authenticate('BasicStrategy')
+  async getUsers(name?: string): Promise<User[]> {
+    let filter = name ? {where: {username: name}} : {};
+    return await this.repository.find(filter);
+  }
+
+  @authenticate('BasicStrategy')
+  async createUser(userInfo: Partial<User>) {
+    return await this.repository.create(new User(userInfo));
   }
 }
