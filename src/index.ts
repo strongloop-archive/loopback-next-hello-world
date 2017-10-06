@@ -10,7 +10,8 @@ import {RestServer, RestBindings} from '@loopback/rest';
 if (require.main === module.parent) {
   // executed from the console
   const app = new HelloWorldApp();
-  (async function main() {
-    await app.start();
-  })();
+  app.start().catch(err => {
+    console.error('Cannot start the application! ', err);
+    process.exit(1);
+  });
 }
